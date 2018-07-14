@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "TakakiME"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "Personal Website"
+homepage = "https://www.takaki.me/"
+tags = []
+features = []
+min_version = "0.1"
+
+[author]
+  name = "Fabio S. Takaki"
+  homepage = "https://www.takaki.me/"
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""

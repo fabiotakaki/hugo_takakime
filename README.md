@@ -1,1 +1,1 @@
-# hugo_takakime
+# Personal website using Hugo

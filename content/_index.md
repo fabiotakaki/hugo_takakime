@@ -1,0 +1,1 @@
+Hi! My name is Fabio, I'm a full-stack software engineer, working as a digital nomad. Currently I'm working with Fitsmind and, before that, I've worked in a project called CETAS at UNESP - Sao Paulo State University, where we research about labor law related to worker’s health.
