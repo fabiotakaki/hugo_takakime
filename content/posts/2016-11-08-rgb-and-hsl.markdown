@@ -37,7 +37,7 @@ Notice that it is possible to visualize with the result the preview of the color
 
 Lastly, I will post in another post, how to manipulate images showing all code used.
 
-## HSL to RGB
+# HSL to RGB
 
 Second <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">Wikipedia</a>, HSL are the two most common cylindrical-coordinate representations of points in an RGB color model. The representation rearrange the geometry of RGB in an attempt to be more intuitive and perceptually relevant than the cartesian (cube) representation. Developed in the 1970s for computer graphics applications, HSL are used today in color pickers, in image editing software, and less commonly in image analysis and computer vision.
 
@@ -67,7 +67,7 @@ Using this formula, we can test with the form below implemented with Javascript:
 <button id="hsl_to_rgb">Calculate</button>
 <div id="result1">Result HSL to RGB</div>
 
-# Algorithm Implemented in Javascript
+## Algorithm Implemented in Javascript
 
 Obs: the code already verify input values :)
 
@@ -166,13 +166,13 @@ Cmin = min(R', G', B')
 
 With these variables, we used the following formula to get Hue, Saturation and Lightness respectly:
 
-# Hue
+## Hue
 ![alt hue-calculation](/img/hue-calc2.gif "Hue Calculation")
 
-# Saturation
+## Saturation
 ![alt saturation-calculation](/img/sat-calc.gif "Saturation Calculation")
 
-# Lightness
+## Lightness
 L = (Cmax + Cmin) / 2
 
 And now, we can test this formula:
@@ -183,7 +183,7 @@ And now, we can test this formula:
 <button id="rgb_to_hsl">Calculate</button>
 <div id="result2">Result RGB to HSL</div>
 
-# Algorithm Implemented in Javascript
+## Algorithm Implemented in Javascript
 
 Obs: the code already verify input values :)
 
@@ -231,8 +231,8 @@ Obs: the code already verify input values :)
   }
 {{< / highlight >}}
 
-## Conclusion
-The two color systems have come to revolutionize color representation in the electronic age. It's pretty excity to learn about how the colors in the human eye works and how we can represent images in pixels, by mixing colors represented by bits. I really hope to post more things about CG in this blog. If you liked this post, found some error or something I can do better, please comment ! :)
+# Conclusion
+The two color systems have come to revolutionize color representation in the electronic age. It's pretty excited to learn about how the colors in the human eye works and how we can represent images in pixels, by mixing colors represented by bits. I really hope to post more things about CG in this blog. If you liked this post, found some error or something I can do better, please comment ! :)
 
 
 <script type="text/javascript">

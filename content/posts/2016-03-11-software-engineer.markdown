@@ -15,5 +15,3 @@ Therefore, to develop good solutions for software, Good Engineers have to know k
 So, follow the link to the article: <a href="https://medium.com/@kn/good-bad-software-engineer-757d4aaedf16" target="_blank">Good and Bad Engineers</a> written by Katsuya Noguchi.
 
 If you liked this post and the article, please comment ! Tell us your opinion, do you agree with points mentioned in Article ? Let's share knowledge ! :)
-
-

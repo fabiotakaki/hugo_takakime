@@ -9,9 +9,9 @@ Today We will deploy my first project created with Django Framework 1.9 in CentO
 Now, let's start:
 
 - First update repositories:
-{{< highlight bash >}}
+```bashrc
 yum update -y
-{{< / highlight >}}
+```
 
 - To get `pip`, we'll need to enable the EPEL repository, which as some additional packages. You can do that easily by typing:
 {{< highlight bash >}}

@@ -10,7 +10,7 @@
     <div>
       <h1>Latest Posts</h1>
       <ul class="posts">
-        {{ range .Data.Pages }}
+        {{ range .Site.RegularPages }}
         <li>
           {{.Date.Format "Mon, Jan 2, 2006"}} <a href="{{.Permalink}}">{{.Title}}</a>
         </li>
