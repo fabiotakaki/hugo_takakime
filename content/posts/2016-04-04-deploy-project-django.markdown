@@ -97,8 +97,9 @@ python manage.py collectstatic
 nano /etc/httpd/conf.d/django.conf
 {{< / highlight >}}
 
-- And put this content, replacing variables <> with your username or nameproject. The <envproject> is the name of VirtualEnv you created to your project.
-{{< highlight bash >}}
+- And put this content, replacing variables <> with your username or nameproject. The envproject is the name of VirtualEnv you created to your project.
+
+```bash {linenos=inline}
 <VirtualHost *:80>
     ServerName www.mydomain.com
     DocumentRoot /home/<username>/<nameproject>
@@ -119,7 +120,7 @@ nano /etc/httpd/conf.d/django.conf
     WSGIScriptAlias / /home/<username>/<nameproject>/<nameproject>/wsgi.py
 
 </VirtualHost>
-{{< / highlight >}}
+```
 
 - Now we will put some permissions and we finish !
 {{< highlight bash >}}

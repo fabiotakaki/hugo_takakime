@@ -29,7 +29,7 @@ Categories: ["Articles"]
     color:#fff;
   }
 </style>
-Recently my teacher <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4706412Y3" target="_blank">Almir Olivette Artero</a>, gave us a work to convert RGB to HSL or vice-versa to start to learn a little about CG. 
+Recently my teacher [Almir Olivette Artero](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4706412Y3), gave us a work to convert RGB to HSL or vice-versa to start to learn a little about CG. 
 
 Then, I decided to share here how I did the calculation and implementation.
 
@@ -39,7 +39,7 @@ Lastly, I will post in another post, how to manipulate images showing all code u
 
 # HSL to RGB
 
-Second <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">Wikipedia</a>, HSL are the two most common cylindrical-coordinate representations of points in an RGB color model. The representation rearrange the geometry of RGB in an attempt to be more intuitive and perceptually relevant than the cartesian (cube) representation. Developed in the 1970s for computer graphics applications, HSL are used today in color pickers, in image editing software, and less commonly in image analysis and computer vision.
+Second [Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV), HSL are the two most common cylindrical-coordinate representations of points in an RGB color model. The representation rearrange the geometry of RGB in an attempt to be more intuitive and perceptually relevant than the cartesian (cube) representation. Developed in the 1970s for computer graphics applications, HSL are used today in color pickers, in image editing software, and less commonly in image analysis and computer vision.
 
 HSL stands hue, saturation and lightness, where hue is defined by angular value between 0° and 360°. Starting by red at 0°, passing through the green primary at 120° and the blue primary at 240°, and then going back to red at 360°. Another two properties saturation and lightness is defined between 0% and 100%, where lightness from black to white and saturation is about gray colors scales to the definitive color.
 

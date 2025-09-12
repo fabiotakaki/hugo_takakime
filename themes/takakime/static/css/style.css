@@ -95,6 +95,11 @@ img{
   max-width:50%;
 }
 
+.highlight > pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .nav-bottom{
   display: flex;
   justify-content: space-between;

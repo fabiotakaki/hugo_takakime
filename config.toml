@@ -14,3 +14,6 @@ theme = "takakime"
     noClasses = true
     style = "monokai"
     tabWidth = 4
+
+[markup.goldmark.renderer]
+    unsafe = true
