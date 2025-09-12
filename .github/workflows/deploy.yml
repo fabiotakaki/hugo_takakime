@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to fabiotakaki.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: fabiotakaki/fabiotakaki.github.io
           publish_branch: master
           publish_dir: ./public
