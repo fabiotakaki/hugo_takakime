@@ -31,12 +31,10 @@ jobs:
           cp CNAME public/CNAME
 
       - name: Deploy to fabiotakaki.github.io
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           external_repository: fabiotakaki/fabiotakaki.github.io
           publish_branch: master
           publish_dir: ./public
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
           commit_message: "Deploy: ${{ github.sha }}"
