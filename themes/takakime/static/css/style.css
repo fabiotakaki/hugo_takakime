@@ -64,15 +64,6 @@ a:hover{
   opacity: 0.8;
 }
 
-ul{
-  padding:0;
-  margin-bottom:40px;
-}
-
-li{
-  list-style: none;
-}
-
 img{
   max-width: 100%;
 }

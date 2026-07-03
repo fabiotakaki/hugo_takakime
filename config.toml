@@ -1,7 +1,11 @@
 baseURL = "/"
-languageCode = "en-us"
 title = "Fabio S. Takaki - TakakiME"
 theme = "takakime"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disableDefaultLanguageRedirect = false
+disableLanguages = []
 
 [markup]
   [markup.highlight]
@@ -16,4 +20,17 @@ theme = "takakime"
     tabWidth = 4
 
 [markup.goldmark.renderer]
-    unsafe = true
+
+[languages]
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = 'English'
+    timeZone = 'America/Sao_Paulo'
+    weight = 1
+  
+  [languages.pt-BR]
+    languageCode = 'pt-BR'
+    languageName = 'Portuguese'
+    timeZone = 'America/Sao_Paulo'
+    weight = 1
+    

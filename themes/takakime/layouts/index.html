@@ -12,7 +12,7 @@
       <ul class="posts">
         {{ range .Site.RegularPages }}
         <li>
-          {{.Date.Format "Mon, Jan 2, 2006"}} <a href="{{.Permalink}}">{{.Title}}</a>
+          {{.Date.Format "Mon, Jan 2, 2006"}} <a href="{{.Permalink}}">{{.Title}}</a> | {{ math.Round (div (countwords .Content) 220.0) }}min {{ if .Draft }} <span class="draft-label"> | DRAFT</span> {{ end }}
         </li>
         {{ end }}
       </ul>
