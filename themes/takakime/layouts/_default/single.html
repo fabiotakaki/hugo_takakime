@@ -1,41 +1,23 @@
 {{ define "main" }}
-<section id="main">
-  <div class="title">
-    <h1 id="title">{{ .Title }}</h1>
-    <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-    <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-  </div>
-  <div>
-      <article id="content" class="post-body">
-         {{ .Content }}
-      </article>
-  </div>
-</section>
-<aside id="meta">
-    <div>
-    <h4>Categories</h4>
-    {{ with .Params.categories }}
-    <ul id="categories">
-      {{ range . }}
-        <li><a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    <ul id="tags">
-      {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    </div>
-    <div class="nav-bottom">
-        {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}">Previous: {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}">Next: {{.Title}}</a>
-        {{ end }}
-    </div>
-</aside>
+<article class="post">
+  <h1 class="post-title">{{ .Title }}</h1>
+  <p class="post-meta">{{ .Date.Format "Mon Jan 2, 2006" }} · {{ math.Round (div (countwords .Content) 220.0) }}min read</p>
+  <div class="post-body">{{ .Content }}</div>
+</article>
+{{ if or .Params.categories .Params.tags }}
+<ul class="chips">
+  {{ range .Params.categories }}
+  <li><a class="chip" href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+  {{ end }}
+  {{ range .Params.tags }}
+  <li><a class="chip" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ if or .PrevInSection .NextInSection }}
+<nav class="post-nav" aria-label="Post navigation">
+  {{ with .PrevInSection }}<a class="post-nav__prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+  {{ with .NextInSection }}<a class="post-nav__next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+</nav>
+{{ end }}
 {{ end }}

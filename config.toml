@@ -7,6 +7,9 @@ defaultContentLanguageInSubdir = false
 disableDefaultLanguageRedirect = false
 disableLanguages = []
 
+[params]
+  role = "AI Software Engineer at Intapp"
+
 [markup]
   [markup.highlight]
     codeFences = true
