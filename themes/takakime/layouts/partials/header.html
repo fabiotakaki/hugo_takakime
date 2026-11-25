@@ -1,13 +1,77 @@
-<header>
-  <a href="/">
-    <img src="/img/profile.png" class="profile" />
-  </a>
-  <h1 class="logo-text"><a href="/">Fabio S. Takaki</a></h1>
-  <div class="social-media">
-    <a href="https://www.linkedin.com/in/fabiotakaki" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.github.com/fabiotakaki" target="_blank"><i class="fab fa-github-square"></i></a>
-    <a href="https://www.twitter.com/fabiotakaki" target="_blank"><i class="fab fa-twitter-square"></i></a>
-    <a href="mailto:fabio.stakaki@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+{{ if .IsHome }}
+<header class="site-header site-header--full">
+  <img class="avatar" src="/img/profile-160.jpg" alt="" width="80" height="80">
+  <h1 class="site-name">Fabio S. Takaki</h1>
+  {{ with site.Params.role }}<p class="site-role">{{ . }}</p>{{ end }}
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/fabiotakaki" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+    <a href="https://www.github.com/fabiotakaki" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+    <a href="https://www.twitter.com/fabiotakaki" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+    <a href="mailto:fabio.stakaki@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
   </div>
-  <!-- <a href="#" target="_blank">Download my CV <i class="fas fa-paperclip"></i></a> -->
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+    <i class="fas fa-moon theme-toggle__moon" aria-hidden="true"></i><i class="fas fa-sun theme-toggle__sun" aria-hidden="true"></i>
+  </button>
 </header>
+{{ else }}
+<header class="site-header site-header--compact">
+  <a href="/">
+    <img class="avatar" src="/img/profile-160.jpg" alt="" width="32" height="32">
+    <span class="site-name">Fabio S. Takaki</span>
+  </a>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+    <i class="fas fa-moon theme-toggle__moon" aria-hidden="true"></i><i class="fas fa-sun theme-toggle__sun" aria-hidden="true"></i>
+  </button>
+</header>
+{{ end }}
+<script>
+  (function () {
+    var button = document.querySelector('.theme-toggle');
+    if (!button) return;
+    var root = document.documentElement;
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function effective() {
+      var chosen = root.getAttribute('data-theme');
+      if (chosen) return chosen;
+      return media.matches ? 'dark' : 'light';
+    }
+
+    function syncPressed() {
+      button.setAttribute('aria-pressed', effective() === 'dark' ? 'true' : 'false');
+    }
+
+    // Matches --duration-fast in style.css: how long the theme color fade runs.
+    var THEME_FADE_MS = 200;
+    var fadeTimer = null;
+
+    button.addEventListener('click', function () {
+      var next = effective() === 'dark' ? 'light' : 'dark';
+      root.classList.add('theme-fading');
+      window.clearTimeout(fadeTimer);
+      fadeTimer = window.setTimeout(function () {
+        root.classList.remove('theme-fading');
+      }, THEME_FADE_MS);
+      root.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch (e) {
+        // Storage blocked: the choice still applies for this page view.
+      }
+      syncPressed();
+    });
+
+    syncPressed();
+
+    // While nothing is chosen, CSS follows the OS live; keep the button state in step.
+    // Safari before 14 only has the older addListener API.
+    function onSchemeChange() {
+      if (!root.getAttribute('data-theme')) syncPressed();
+    }
+    if (media.addEventListener) {
+      media.addEventListener('change', onSchemeChange);
+    } else if (media.addListener) {
+      media.addListener(onSchemeChange);
+    }
+  })();
+</script>

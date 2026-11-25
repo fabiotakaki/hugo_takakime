@@ -1,7 +1,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Apply the saved theme before first paint. Unset = CSS follows the OS.
+  // Placed before every stylesheet so it never waits on a CDN download.
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {
+    // Intentionally empty: storage can be blocked; the OS preference applies.
+  }
+</script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Teko:400,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet" />
 <title>
   {{ block "title" . }}

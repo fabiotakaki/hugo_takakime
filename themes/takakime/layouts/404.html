@@ -1,1 +1,7 @@
-Ops. Something went wrong. <a href="{{ .Site.BaseURL }}">Go home</a>
+{{ define "main" }}
+<section class="not-found">
+  <h1>Page not found</h1>
+  <p>Ops. Something went wrong.</p>
+  <p><a href="{{ "/" | relURL }}">Go home</a></p>
+</section>
+{{ end }}
